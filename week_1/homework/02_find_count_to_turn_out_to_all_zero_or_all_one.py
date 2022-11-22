@@ -1,4 +1,4 @@
-input = "10101101"
+input = "011110"
 
 
 def find_count_to_turn_out_to_all_zero_or_all_one(string):
