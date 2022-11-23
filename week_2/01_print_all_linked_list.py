@@ -3,12 +3,6 @@ class Node:
         self.data = data
         self.next = None
 
-
-node = Node(3)
-first_node = Node(4)
-node.next = first_node
-
-
 class LinkedList:
     def __init__(self, data):
         self.head = Node(data)  # head 에 시작하는 Node 를 연결
@@ -22,7 +16,6 @@ class LinkedList:
 
         while cur.next is not None:
             cur = cur.next
-            print('cur is ', cur.data)
         cur.next = Node(data)
 
     def print_all(self):
@@ -36,5 +29,6 @@ class LinkedList:
 linked_list = LinkedList(3)
 linked_list.append(4)
 linked_list.append(5)
+linked_list.append(6)
 
 linked_list.print_all()
