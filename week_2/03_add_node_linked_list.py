@@ -38,14 +38,24 @@ class LinkedList:
     def add_node(self, index, value):
         if index == 0:
             new_node = Node(value)  # [6] -> [5]
-            new_node.next = self.head # head -> [6]
+            new_node.next = self.head  # head -> [6]
             return
 
-        new_node = Node(value) # [6]
-        node = self.get_node(index-1) # [5]
-        next_node = node.next # [12]
-        node.next = new_node # [5] -> [6]
-        new_node.next = next_node # [6] -> [12]
+        # new_node = Node(value) # [6]
+        # node = self.get_node(index-1) # [5]
+        # next_node = node.next # [12]
+        # node.next = new_node # [5] -> [6]
+        # new_node.next = next_node # [6] -> [12]
+
+        try:
+            new_node = Node(value)  # [6]
+            node = self.get_node(index - 1)  # [5]
+            next_node = node.next  # [12]
+            node.next = new_node  # [5] -> [6]
+            new_node.next = next_node  # [6] -> [12]
+        except:
+            print('올바른 인덱스를 입력하세요')
+            quit()
 
 
 linked_list = LinkedList(5)
@@ -54,5 +64,5 @@ linked_list.append(8)
 
 # [5] -> [6] -> [12] -> [8]
 
-linked_list.add_node(1, 6)
+linked_list.add_node(4, 6)
 linked_list.print_all()
